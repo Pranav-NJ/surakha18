@@ -3,11 +3,16 @@ import express from "express";
 import { createServer, type Server } from "http";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 import multer from "multer";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import { familyConnections, emergencyAlerts } from "@shared/schema";
 import type { Destination, EmergencyAlert, EmergencyContact, FamilyConnection, LiveStream } from "@shared/schema";
+
+// ES module fix for __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import { db } from "./db";
 import { eq, and, or, desc, inArray } from "drizzle-orm";
 import { generateOTP, sendWhatsAppOTP, sendEmailOTP, sendWhatsAppEmergency, sendEmailAlert } from "./whatsappService";
