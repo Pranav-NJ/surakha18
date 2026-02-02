@@ -8,6 +8,13 @@ build
 client/dist
 *.tsbuildinfo
 
+# Compiled files
+*.js
+*.js.map
+!vite.config.js
+!tailwind.config.js
+!postcss.config.js
+
 # Environment files
 .env
 .env.local
