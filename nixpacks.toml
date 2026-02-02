@@ -1,10 +1,10 @@
 [phases.setup]
-nixPkgs = ["nodejs_22", "npm-9_x"]
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
 cmds = [
-  "npm ci",
-  "cd client && npm ci"
+  "npm install --legacy-peer-deps",
+  "cd client && npm install --legacy-peer-deps && cd .."
 ]
 
 [phases.build]
