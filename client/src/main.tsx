@@ -2,6 +2,9 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
+// Debug: Log to verify script is loading
+console.log("Main.tsx loaded - React app initializing...");
+
 // Set the page title
 document.title = "Sakhi Suraksha - Women's Safety App";
 
