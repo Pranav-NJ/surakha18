@@ -346,6 +346,7 @@ export default function Contacts() {
                               type="email"
                               placeholder="contact@example.com"
                               {...field}
+                              value={field.value ?? ""}
                             />
                           </FormControl>
                           <FormMessage />
